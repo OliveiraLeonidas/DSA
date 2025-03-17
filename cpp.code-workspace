@@ -1,0 +1,20 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.associations": {
+            "*.hpp": "cpp"
+        },
+        "workbench.statusBar.visible": true,
+        "window.menuBarVisibility": "default",
+        "workbench.editor.labelFormat": "short",
+        "editor.fontLigatures": true,
+        "window.commandCenter": false,
+        "editor.formatOnSave": false,
+        "C_Cpp.default.compilerPath": "/usr/bin/g++",
+        "C_Cpp.default.intelliSenseMode": "linux-gcc-x64"
+    }
+}

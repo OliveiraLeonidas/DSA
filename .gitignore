@@ -1,0 +1,6 @@
+*.s
+*.out
+*.txt
+
+*.exe
+hello.cpp
