@@ -10,6 +10,7 @@ class LinkedList {
   public:
     LinkedList() {
       head = NULL;
+      counter = 0;
     }
 
     void insert(int data) {
@@ -19,6 +20,7 @@ class LinkedList {
       
       if (this->head != NULL) temp->next_node = this->head;
       this->head = temp;
+      this->counter++;
     }
     
     void insertN(int data, int index) {
@@ -40,7 +42,7 @@ class LinkedList {
       };
 
       if(temp2 == NULL) {
-        std::cout << "Erro: indice fora do limtie. \n";
+        std::cout << "Error: index out limit. \n";
         delete temp1;
         return;
       };
@@ -78,6 +80,11 @@ class LinkedList {
       Node* temp = this->head;
       this->head = this->head->next_node;
       delete temp;
+      if (counter > 0){ 
+        this->counter--;
+      } else {
+        std::cout << "list is empty\n";
+      }
     }
 
     void deleteN(int index) {
@@ -104,8 +111,13 @@ class LinkedList {
       delete temp2; // free memory from temp2
     }
   
+    int void length() {
+      return this->counter;
+    }
+
     private:
     Node* head;
+    int counter;
     
 };
 
@@ -116,20 +128,19 @@ int main() {
   list.insert(20);
   list.insert(30);
   list.insert(100);
-  list.printList(); // Deve imprimir: 100 30 20 10
+  list.printList(); 
 
-  list.insertN(50, 3); // Inserir 50 na posição 3
-  list.printList(); // Deve imprimir: 100 30 50 20 10
+  // list.insertN(50, 3);
+  // list.printList(); 
+  // std::cout << "Top: " << list.top() << "\n"; 
 
-  std::cout << "Topo: " << list.top() << "\n"; // Deve imprimir: 100
+  // list.pop();
+  // list.printList(); 
 
-  list.pop();
-  list.printList(); // Deve imprimir: 30 50 20 10
+  // std::cout << "Top: " << list.top() << "\n";
 
-  std::cout << "Topo: " << list.top() << "\n"; // Deve imprimir: 30
-
-  list.deleteN(2);
-  list.printList(); 0
+  // list.deleteN(2);
+  list.printList(); 
 
   return 0;
 }
